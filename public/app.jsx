@@ -21,7 +21,7 @@ var GreeterForm = React.createClass({
     var updates =  {};
     var name = this.refs.name.value;
     var message = this.refs.message.value;
-    // If length is greater than 0, replace value with nothing and update prop of onNewName
+    // If length is greater than 0, replace value with nothing and update prop
     if (name.length > 0) {
       this.refs.name.value = '';
       updates.name = name;
@@ -30,14 +30,20 @@ var GreeterForm = React.createClass({
       this.refs.message.value = '';
       updates.message = message;
     }
-    this.props.onNewName(updates);
+    this.props.onNewData(updates);
   },
   render: function() {
     return (
       <form onSubmit={this.onFormSubmit}>
-        <input type="text" ref="name" placeholder="Enter Name"/><br/>
-        <textarea ref="message" placeholder="Enter Message"></textarea><br/>
-        <button>Set Name & Message</button>
+        <div>
+          <input type="text" ref="name" placeholder="Enter Name"/>
+        </div>
+        <div>
+          <textarea ref="message" placeholder="Enter Message"></textarea>
+        </div>
+        <div>
+          <button>Submit</button>
+        </div>
       </form>
     );
   }
@@ -60,7 +66,7 @@ var Greeter = React.createClass({
     };
   },
   // Update state from Form component
-  handleNewName: function(updates) {
+  handleNewData: function(updates) {
     this.setState(updates);
   },
   // Fetch value & display to screen
@@ -72,7 +78,7 @@ var Greeter = React.createClass({
     return (
       <div>
         <GreeterMessage name={name} message={message}/>
-        <GreeterForm onNewName={this.handleNewName}/>
+        <GreeterForm onNewData={this.handleNewData}/>
       </div>
     );
   }
