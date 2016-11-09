@@ -1,17 +1,29 @@
 var Greeter = React.createClass({
+  // Define default props
   getDefaultProps: function() {
     return {
       name: 'React',
       message: 'This is a default message'
     };
   },
+  // Set name state to props value
+  getInitialState: function() {
+    return {
+      name: this.props.name
+    };
+  },
+  // Update state and rerender components, clear form
   onButtonClick: function(e) {
     e.preventDefault();
     var name = this.refs.name.value;
-    alert(name);
+    this.refs.name.value = '';
+    this.setState({
+      name: name
+    });
   },
+  // Fetch value & display to screen
   render: function() {
-    var name = this.props.name;
+    var name = this.state.name;
     var message = this.props.message
 
     return (
