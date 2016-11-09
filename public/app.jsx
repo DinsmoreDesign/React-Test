@@ -15,11 +15,14 @@ var Greeter = React.createClass({
   // Update state and rerender components, clear form
   onButtonClick: function(e) {
     e.preventDefault();
-    var name = this.refs.name.value;
-    this.refs.name.value = '';
-    this.setState({
-      name: name
-    });
+    var nameRef = this.refs.name;
+    var name = nameRef.value;
+    nameRef.value = '';
+    if (typeof name === 'string' && name.length > 0) {
+      this.setState({
+        name: name
+      });
+    }
   },
   // Fetch value & display to screen
   render: function() {
