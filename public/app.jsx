@@ -3,7 +3,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 // Import components
-var Greeter = require('./components/Greeter');
+var Greeter = require('Greeter');
 
 // Create variable for injection into component
 var firstName = 'Derek';

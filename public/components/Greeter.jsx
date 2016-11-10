@@ -2,8 +2,8 @@
 var React = require('react');
 
 // Import components
-var GreeterMessage = require('./GreeterMessage');
-var GreeterForm = require('./GreeterForm');
+var GreeterMessage = require('GreeterMessage');
+var GreeterForm = require('GreeterForm');
 
 // Main Component
 var Greeter = React.createClass({
