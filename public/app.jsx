@@ -1,3 +1,7 @@
+// Require React
+var React = require('react');
+var ReactDOM = require('react-dom');
+
 // Message Component
 var GreeterMessage = React.createClass({
   render: function() {
